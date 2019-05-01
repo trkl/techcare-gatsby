@@ -19,14 +19,14 @@
     medium: '(max-width: 980px)',
     small: '(max-width: 736px)',
     xsmall: '(max-width: 480px)',
-    xxsmall: '(max-width: 360px)',
+    xxsmall: '(max-width: 360px)'
   )
 );
 
 @include skel-layout(
   (
     reset: 'full',
-    boxModel: 'border',
+    boxModel: 'border'
   )
 );
 
@@ -1008,7 +1008,7 @@ button,
 #header {
   @include padding(9em, 0, (0, 0, _size(element-margin), 0));
   @include dark(#4686a0);
-  background-image: url('../images/devicesHero.jpg');
+  background-image: url('src/assets/images/DevicesHero.jpg');
   background-position: center center, center center, center center;
   background-size: cover;
   overflow: hidden;
