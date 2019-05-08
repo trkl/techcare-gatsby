@@ -285,11 +285,26 @@ textarea {
   }
 
   &:focus {
-    border-color: _palette(grey);
+    border-color: #45877b;
+  }
+}
+
+#newsletterSubmit {
+  background-color: transparent;
+  button:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: black;
+  }
+  &:focus {
+    outline: 0;
   }
 }
 
 #id01 {
+  margin-bottom: 10px;
   width: 100%;
   max-width: 600px;
 }
@@ -798,7 +813,7 @@ input[type='reset'],
 input[type='button'],
 button,
 .button {
-  background-color: transparent;
+  background-color: #46877b;
   border-radius: _size(border-radius);
   border: 0;
   box-shadow: inset 0 0 0 1px _palette(border);
@@ -817,12 +832,12 @@ button,
   text-transform: uppercase;
   white-space: nowrap;
 
-  &:hover {
-    background-color: _palette(border-bg);
+  &:focus {
+    background-color: black;
   }
 
   &:active {
-    background-color: _palette(border2-bg);
+    background-color: black;
   }
 
   &.icon {
@@ -896,12 +911,6 @@ button,
   header {
     p {
       color: _palette(dark, fg-bold);
-    }
-
-    &.major {
-      &:after {
-        background: _palette(dark, border);
-      }
     }
   }
 
@@ -1008,16 +1017,6 @@ button,
       top: 100%;
       width: 1px;
     }
-  }
-
-  &:after {
-    content: '';
-    height: 100%;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
   }
 }
 
