@@ -3,7 +3,8 @@ import addToMailchimp from 'gatsby-plugin-mailchimp';
 
 class Header extends React.Component {
   state = {
-    email: ''
+    email: '',
+    result: null
   };
 
   handleInputChange = event => {
@@ -19,10 +20,32 @@ class Header extends React.Component {
   _handleSubmit = async event => {
     console.log(this.state.email);
     event.preventDefault();
-    const result = await addToMailchimp(this.state.email);
+    this.setState({ result: await addToMailchimp(this.state.email) });
     // I recommend setting `result` to React state
     // but you can do whatever you want
   };
+
+  returnMessage() {
+    if (this.state.result == null) {
+      return (
+        <div>
+          <h1> </h1>
+        </div>
+      );
+    } else if (this.state.result.result === 'error') {
+      return (
+        <div>
+          <h1>Woops. Something went wrong!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h1>Thank you for subscribing!</h1>
+        </div>
+      );
+    }
+  }
 
   render() {
     return (
@@ -49,6 +72,14 @@ class Header extends React.Component {
               />
             </div>
             <div />
+            <div>
+              {this.returnMessage()}
+              {/* <h1>
+                {this.state.result && this.state.result.result == 'success'
+                  ? 'Thank you for subscribing!'
+                  : 'It looks like this email is already subscribed!'}
+              </h1> */}
+            </div>
 
             <div>
               <button id="newsletterSubmit" type="submit">
