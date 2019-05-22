@@ -5,8 +5,6 @@ import Layout from '../components/layout';
 
 import pic01 from '../assets/images/TechCareCompOverview.jpg';
 import pic02 from '../assets/images/deviceWithShadow.png';
-import pic03 from '../assets/images/pic03.jpg';
-import pic04 from '../assets/images/pic04.jpg';
 
 class Homepage extends React.Component {
   render() {
@@ -56,38 +54,41 @@ class Homepage extends React.Component {
           </div>
         </section>
 
-        <section>
-          <section id="one" className="main style3">
-            <form name="contact" method="POST" data-netlify="true">
-              <p>
-                <label>
-                  Your Name: <input type="text" name="name" />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your Email: <input type="email" name="email" />
-                </label>
-              </p>
-              <p>
-                <label>
-                  Your Role:{' '}
-                  <select name="role[]" multiple>
-                    <option value="leader">Leader</option>
-                    <option value="follower">Follower</option>
-                  </select>
-                </label>
-              </p>
-              <p>
-                <label>
-                  Message: <textarea name="message" />
-                </label>
-              </p>
+        <section id="one" className="main style4">
+          <form name="contact" method="POST" data-netlify="true">
+            <div className="grid-wrapper">
+              <div className="col-12">
+                <header className="major">
+                  <h2>Any questions?</h2>
+                </header>
+              </div>
+              <div className="col-6">
+                <p>
+                  <label>
+                    Your Name <input type="text" name="name" />
+                  </label>
+                </p>
+              </div>
+              <div className="col-6">
+                <p>
+                  <label>
+                    Your Email <input type="email" name="email" />
+                  </label>
+                </p>
+              </div>
+              <div className="col-12">
+                <p>
+                  <label>
+                    Message <textarea name="message" />
+                  </label>
+                </p>
+              </div>
+
               <p>
                 <button type="submit">Send</button>
               </p>
-            </form>
-          </section>
+            </div>{' '}
+          </form>
         </section>
 
         {/* <section id="three" className="main style1 special">

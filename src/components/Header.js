@@ -51,7 +51,6 @@ class Header extends React.Component {
     return (
       <section id="header">
         <div className="inner">
-          <span className="icon major fa-cloud" />
           <h1>
             Do you want <strong>us </strong>to keep<strong> you </strong>{' '}
             posted?
