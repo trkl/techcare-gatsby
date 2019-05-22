@@ -55,7 +55,15 @@ class Homepage extends React.Component {
         </section>
 
         <section id="one" className="main style4">
-          <form name="contact" method="POST" data-netlify="true">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify-recaptcha="true"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
             <div className="grid-wrapper">
               <div className="col-12">
                 <header className="major">
