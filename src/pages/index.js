@@ -83,10 +83,10 @@ class Homepage extends React.Component {
                   </label>
                 </p>
               </div>
-
               <p>
                 <button type="submit">Send</button>
               </p>
+              <div data-netlify-recaptcha="true" />
             </div>{' '}
           </form>
         </section>
