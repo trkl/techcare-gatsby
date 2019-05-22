@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-
 import Layout from '../components/layout';
 
 import pic01 from '../assets/images/TechCareCompOverview.jpg';
@@ -58,7 +57,6 @@ class Homepage extends React.Component {
           <form
             name="contact"
             method="POST"
-            data-netlify-recaptcha="true"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
           >
@@ -94,8 +92,7 @@ class Homepage extends React.Component {
               <p>
                 <button type="submit">Send</button>
               </p>
-              <div data-netlify-recaptcha="true" />
-            </div>{' '}
+            </div>
           </form>
         </section>
 
