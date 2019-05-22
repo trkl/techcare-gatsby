@@ -1,16 +1,16 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 
-import Layout from '../components/layout'
+import Layout from '../components/layout';
 
-import pic01 from '../assets/images/TechCareCompOverview.jpg'
-import pic02 from '../assets/images/deviceWithShadow.png'
-import pic03 from '../assets/images/pic03.jpg'
-import pic04 from '../assets/images/pic04.jpg'
+import pic01 from '../assets/images/TechCareCompOverview.jpg';
+import pic02 from '../assets/images/deviceWithShadow.png';
+import pic03 from '../assets/images/pic03.jpg';
+import pic04 from '../assets/images/pic04.jpg';
 
 class Homepage extends React.Component {
   render() {
-    const siteTitle = 'TechCare'
+    const siteTitle = 'TechCare';
 
     return (
       <Layout>
@@ -54,6 +54,40 @@ class Homepage extends React.Component {
               </p>
             </div>
           </div>
+        </section>
+
+        <section>
+          <section id="one" className="main style3">
+            <form name="contact" method="POST" data-netlify="true">
+              <p>
+                <label>
+                  Your Name: <input type="text" name="name" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Your Email: <input type="email" name="email" />
+                </label>
+              </p>
+              <p>
+                <label>
+                  Your Role:{' '}
+                  <select name="role[]" multiple>
+                    <option value="leader">Leader</option>
+                    <option value="follower">Follower</option>
+                  </select>
+                </label>
+              </p>
+              <p>
+                <label>
+                  Message: <textarea name="message" />
+                </label>
+              </p>
+              <p>
+                <button type="submit">Send</button>
+              </p>
+            </form>
+          </section>
         </section>
 
         {/* <section id="three" className="main style1 special">
@@ -142,8 +176,8 @@ class Homepage extends React.Component {
           </div>
         </section> */}
       </Layout>
-    )
+    );
   }
 }
 
-export default Homepage
+export default Homepage;
