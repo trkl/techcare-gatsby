@@ -4,7 +4,8 @@ import addToMailchimp from 'gatsby-plugin-mailchimp';
 class Header extends React.Component {
   state = {
     email: '',
-    result: null
+    result: null,
+    msg: null
   };
 
   handleInputChange = event => {
@@ -21,27 +22,63 @@ class Header extends React.Component {
     console.log(this.state.email);
     event.preventDefault();
     this.setState({ result: await addToMailchimp(this.state.email) });
+    this.setState({ msg: await addToMailchimp(this.state.email) });
     // I recommend setting `result` to React state
     // but you can do whatever you want
   };
 
   returnMessage() {
+    console.log(this.state.result.msg);
     if (this.state.result == null) {
       return (
         <div>
           <h1> </h1>
         </div>
       );
-    } else if (this.state.result.result === 'error') {
+    } else if (
+      this.state.result.msg.includes('The email you entered is not valid.') ||
+      this.state.result.msg.includes(
+        'is an invalid email address and cannot be imported'
+      )
+    ) {
       return (
         <div>
-          <h1>Woops. Something went wrong!</h1>
+          <h1sub>The email you entered is not valid!</h1sub>
+        </div>
+      );
+    } else if (
+      this.state.result.msg.includes('is already subscribed to list')
+    ) {
+      return (
+        <div>
+          <h1sub>You are already subscribed.</h1sub>
+        </div>
+      );
+    } else if (
+      this.state.result.msg.includes('is already subscribed to list')
+    ) {
+      return (
+        <div>
+          <h1sub>You are already subscribed.</h1sub>
+        </div>
+      );
+    } else if (
+      this.state.result.msg.includes(
+        'Too many subscribe attempts for this email address. Please try again in about 5 minutes.'
+      ) ||
+      this.state.result.msg.includes('has too many recent signup requests')
+    ) {
+      return (
+        <div>
+          <h1sub>
+            Too many attempts from this email address. Try again later.
+          </h1sub>
         </div>
       );
     } else {
       return (
         <div>
-          <h1>Thank you for subscribing!</h1>
+          <h1sub>Thank you for subscribing!</h1sub>
         </div>
       );
     }

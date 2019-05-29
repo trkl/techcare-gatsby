@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
+import ContactForm from '../components/ContactForm';
 
 import pic01 from '../assets/images/TechCareCompOverview.jpg';
 import pic02 from '../assets/images/deviceWithShadow.png';
@@ -54,133 +55,8 @@ class Homepage extends React.Component {
         </section>
 
         <section id="one" className="main style4">
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="grid-wrapper">
-              <div className="col-12">
-                <header className="major">
-                  <h2>Any questions?</h2>
-                </header>
-              </div>
-              <div className="col-6">
-                <p>
-                  <label>
-                    Your Name <input type="text" name="name" />
-                  </label>
-                </p>
-              </div>
-              <div className="col-6">
-                <p>
-                  <label>
-                    Your Email <input type="email" name="email" />
-                  </label>
-                </p>
-              </div>
-              <div className="col-12">
-                <p>
-                  <label>
-                    Message <textarea name="message" />
-                  </label>
-                </p>
-              </div>
-              <p>
-                <button type="submit">Send</button>
-              </p>
-            </div>
-          </form>
+          <ContactForm />
         </section>
-
-        {/* <section id="three" className="main style1 special">
-          <div className="grid-wrapper">
-            <div className="col-12">
-              <header className="major">
-                <h2>Adipiscing amet consequat</h2>
-              </header>
-              <p>
-                Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.
-              </p>
-            </div>
-
-            <div className="col-4">
-              <span className="image fit">
-                <img src={pic02} alt="" />
-              </span>
-              <h3>Magna feugiat lorem</h3>
-              <p>
-                Adipiscing a commodo ante nunc magna lorem et interdum mi ante
-                nunc lobortis non amet vis sed volutpat et nascetur.
-              </p>
-              <ul className="actions">
-                <li>
-                  <a href="#" className="button">
-                    More
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-4">
-              <span className="image fit">
-                <img src={pic03} alt="" />
-              </span>
-              <h3>Magna feugiat lorem</h3>
-              <p>
-                Adipiscing a commodo ante nunc magna lorem et interdum mi ante
-                nunc lobortis non amet vis sed volutpat et nascetur.
-              </p>
-              <ul className="actions">
-                <li>
-                  <a href="#" className="button">
-                    More
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-4">
-              <span className="image fit">
-                <img src={pic04} alt="" />
-              </span>
-              <h3>Magna feugiat lorem</h3>
-              <p>
-                Adipiscing a commodo ante nunc magna lorem et interdum mi ante
-                nunc lobortis non amet vis sed volutpat et nascetur.
-              </p>
-              <ul className="actions">
-                <li>
-                  <a href="#" className="button">
-                    More
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section> */}
-
-        {/* <section id="four" className="main style2 special">
-          <div className="container">
-            <header className="major">
-              <h2>Ipsum feugiat consequat?</h2>
-            </header>
-            <p>Sed lacus nascetur ac ante amet sapien.</p>
-            <ul className="actions uniform">
-              <li>
-                <a href="#" className="button special">
-                  Sign Up
-                </a>
-              </li>
-              <li>
-                <a href="#" className="button">
-                  Learn More
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section> */}
       </Layout>
     );
   }
