@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
 import ContactForm from '../components/ContactForm';
+import Hero from '../components/Hero';
 
 import pic01 from '../assets/images/TechCareCompOverview.jpg';
 import pic02 from '../assets/images/deviceWithShadow.png';
@@ -13,6 +14,7 @@ class Homepage extends React.Component {
     return (
       <Layout>
         <Helmet title={siteTitle} />
+        <Hero />
 
         <section id="one" className="main style1">
           <div className="grid-wrapper">
